@@ -42,11 +42,18 @@ packer.init({
 return packer.startup(function(use)
 
     use({ 'wbthomason/packer.nvim' })
-    use({ 'folke/tokyonight.nvim' })
+    use({ 'nvim-lua/plenary.nvim',  })
+
+    --Color Schemes
+    use({ 'folke/tokyonight.nvim'})
 	
 
+    --Telescope
+    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+    use "EdenEast/nightfox.nvim" -- Packer
 
-
+    --use({ "xiyaowong/nvim-transparent" })
+    --use({ "tribela/vim-transparent" })
 
     -- Se configura automaticamente despues de clonar pakcer.nvim
     -- Simpre tiene que ir al final de los plugins
@@ -55,3 +62,4 @@ return packer.startup(function(use)
     end
 
 end)
+
