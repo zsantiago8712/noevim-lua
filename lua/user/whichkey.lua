@@ -80,12 +80,23 @@ local vopts = {
 
 
 local mappings = {
+
   ["w"] = { ":w<cr>", "Save" },
   ["q"] = { ":q<cr>", "Quit" },
   ["f"] = { ":Telescope find_files<cr>", "Find Files" },
   ["g"] = { ":Telescope grep_string<cr>", "Search Word" },
   ["r"] = { ":Telescope repo list<cr>", "Find Repo" },
-  ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" }
+  ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
+    P = {
+    name = "Packer",
+    c = { "<cmd>PackerCompile<cr>", "Compile" },
+    i = { "<cmd>PackerInstall<cr>", "Install" },
+    s = { "<cmd>PackerSync<cr>", "Sync" },
+    S = { "<cmd>PackerStatus<cr>", "Status" },
+    u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
+
 
 }
 

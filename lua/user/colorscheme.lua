@@ -43,6 +43,10 @@ colorsheme.setup  {
 colorsheme.load();
 
 
+
+
+
+
 -- NightFox Configs
 -- colorsheme.setup({
 --   options = {
