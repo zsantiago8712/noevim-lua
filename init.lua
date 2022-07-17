@@ -1,6 +1,8 @@
+require("user.keymaps")
 require("user.options")
 require("user.plugins")
 require("user.colorscheme")
---require("user.transparent")
 require("user.telescope")
-
+require("user.whichkey")
+require("user.proyect")
+require("user.treesitter")
