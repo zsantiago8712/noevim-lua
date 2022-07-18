@@ -5,14 +5,14 @@ end
 
 local lspconfig = require("lspconfig")
 
-require('lsp_signature').on_attach()
+require("lsp_signature").on_attach()
 -- local sumneko_root_path = vim.fn.expand("$HOME")..'/github/sumneko/lua-language-server'
 -- local sumneko_binary = vim.fn.expand("$HOME")..'/github/sumneko/lua-language-server/bin/macOS/lua-language-server'
 local on_attach = function(client, bufnr)
-  require'lsp_signature'.on_attach()
+	require("lsp_signature").on_attach()
 end
 
-local servers = { "jsonls", "sumneko_lua", "clangd"}
+local servers = { "jsonls", "sumneko_lua", "clangd" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
@@ -30,3 +30,27 @@ for _, server in pairs(servers) do
 	lspconfig[server].setup(opts)
 end
 
+lspconfig.sumneko_lua.setup({
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+				-- Setup your lua path
+				path = runtime_path,
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false,
+				maxPreload = 100000,
+				preloadFileSize = 10000,
+			},
+			diagnostics = {
+				globals = { "vim", "awesome", "client", "root", "tag", "screen", "mouse" },
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})

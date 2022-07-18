@@ -13,9 +13,9 @@ dashboard.section.header.val = {
 
 -- Set menu
 dashboard.section.buttons.val = {
-	dashboard.button("f", "🔎 Find Files", ":Telescope find_files<CR>"),
+	dashboard.button("f", " Find Files", ":Telescope find_files<CR>"),
 	dashboard.button("p", "  Find project", ":Telescope projects<CR>"),
-	dashboard.button("r", "  Find repo", ":Telescope repo list<CR>"),
+	dashboard.button("r", "  Find repo", ":Telescope repo list<CR>"),
 	dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
 }
 

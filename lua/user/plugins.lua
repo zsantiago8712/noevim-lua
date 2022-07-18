@@ -58,7 +58,12 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" })
 
 	--Fix Cursor
-	use({ "antoinemadec/FixCursorHold.nvim" })
+	use({
+		"antoinemadec/FixCursorHold.nvim",
+		run = function()
+			vim.g.curshold_updatime = 1000
+		end,
+	})
 
 	--Treesitter
 	use({
@@ -131,6 +136,52 @@ return packer.startup(function(use)
 			require("Comment").setup()
 		end,
 	})
+
+	-- Nump
+	use({
+		"nacro90/numb.nvim",
+		config = function()
+			require("numb").setup()
+		end,
+	})
+
+	-- Indent Blanck Line
+	use({ "lukas-reineke/indent-blankline.nvim" })
+
+	-- File browser
+	--use({ "nvim-telescope/telescope-file-browser.nvim" })
+
+	-- Lua Tree
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icons
+		},
+	})
+
+	-- Lua Dev
+	use({ "folke/lua-dev.nvim" })
+
+	-- SQLlite
+	use({ "tami5/sqlite.lua" })
+
+	-- Cheat Sheats
+	use({ "nvim-telescope/telescope-cheat.nvim" })
+
+	--  Todo comments
+	use({
+		"folke/todo-comments.nvim",
+		config = function()
+			require("todo-comments").setup()
+		end,
+	})
+
+	-- Find Symbols
+	use({ "simrat39/symbols-outline.nvim" })
+
+	-- TODO: CAcabar de configurar el debugger
+	-- Debuger
+	use({ "mfussenegger/nvim-dap" })
 
 	-- Se configura automaticamente despues de clonar pakcer.nvim
 	-- Simpre tiene que ir al final de los plugins
