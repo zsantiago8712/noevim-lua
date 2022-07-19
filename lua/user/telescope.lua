@@ -73,7 +73,7 @@ telescope.setup({
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
 				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-        ["<CR>"] = actions.select_default,
+				["<CR>"] = actions.select_default,
 			},
 		},
 	},
@@ -110,3 +110,4 @@ telescope.load_extension("fzf")
 telescope.load_extension("repo")
 --telescope.load_extension("file_browser")
 telescope.load_extension("cheat")
+telescope.load_extension("dap")

@@ -1,5 +1,4 @@
 local fn = vim.fn
-
 -- Installa Packer si no lo tienes
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -176,13 +175,26 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- GitSigns
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("gitsigns").setup({ current_line_blame = true })
+		end,
+	})
+
+	use({ "norcalli/nvim-colorizer.lua" })
+
 	-- Find Symbols
 	use({ "simrat39/symbols-outline.nvim" })
 
 	-- TODO: CAcabar de configurar el debugger
 	-- Debuger
 	use({ "mfussenegger/nvim-dap" })
-
+	use({ "rcarriga/nvim-dap-ui" })
+	use({ "theHamsta/nvim-dap-virtual-text" })
+	use({ "nvim-telescope/telescope-dap.nvim" })
 	-- Se configura automaticamente despues de clonar pakcer.nvim
 	-- Simpre tiene que ir al final de los plugins
 	if packer_bootstrap then

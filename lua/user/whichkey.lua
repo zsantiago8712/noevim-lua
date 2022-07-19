@@ -94,6 +94,21 @@ local mappings = {
 		s = { ":SymbolsOutline<cr>", "fIND sYMBOLS" },
 	},
 
+	d = {
+		name = "Debugger",
+		s = { "<cmd>lua require'dap'.continue()<cr><cmd>lua require('dapui').open()<cr>", "Continue/Start debugging" },
+		t = { "<cmd>lua require('dap').terminate()<cr><cmd>lua require('dapui').close()<cr>", "Stop debugger" },
+		b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breackpoint" },
+		c = { "<cmd>lua require('dap').step_over()<cr>", "Step Over" },
+		i = { "<cmd>lua require('dap').step_into()<cr>", "Step Into" },
+		o = { "<cmd>lua require('dap').set_out()<cr>", "Step Out" },
+		e = {
+			"<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+			"Tobble Breackpoint with condition",
+		},
+		r = { "<cmd>lua require('dap').run_last()<cr>", "Re run last adapter" },
+	},
+
 	P = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
