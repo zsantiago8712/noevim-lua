@@ -10,6 +10,13 @@ end
 
 dapui.setup()
 
+vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "LspDiagnosticsSignError", linehl = "", numhl = "" })
+vim.fn.sign_define(
+	"DapBreakpointRejected",
+	{ text = "", texthl = "LspDiagnosticsSignHint", linehl = "", numhl = "" }
+)
+vim.fn.sign_define("DapStopped", { text = "", texthl = "LspDiagnosticsSignHint", linehl = "", numhl = "" })
+
 dap.adapters.lldb = {
 	type = "executable",
 	command = "/opt/homebrew/opt/llvm/bin/lldb-vscode",

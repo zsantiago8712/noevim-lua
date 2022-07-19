@@ -94,6 +94,12 @@ local mappings = {
 		s = { ":SymbolsOutline<cr>", "fIND sYMBOLS" },
 	},
 
+	t = {
+		r = { ":Telescope toggletasks spawn<cr>", "Run Task" },
+		f = { ":Telescope toggletasks select<cr>", "Find and Toggle Task" },
+		e = { ":Telescope toggletasks edit<cr>", "Find Toggle Edit Task" },
+	},
+
 	d = {
 		name = "Debugger",
 		s = { "<cmd>lua require'dap'.continue()<cr><cmd>lua require('dapui').open()<cr>", "Continue/Start debugging" },

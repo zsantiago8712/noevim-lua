@@ -189,7 +189,15 @@ return packer.startup(function(use)
 	-- Find Symbols
 	use({ "simrat39/symbols-outline.nvim" })
 
-	-- TODO: CAcabar de configurar el debugger
+	use({
+		"jedrzejboczar/toggletasks.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"akinsho/toggleterm.nvim",
+		},
+	})
+
+	-- TODO: Acabar de configurar el debugger para Python
 	-- Debuger
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
